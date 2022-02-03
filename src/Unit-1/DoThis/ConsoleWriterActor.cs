@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Akka.Actor;
 
 namespace WinTail
@@ -11,13 +11,13 @@ namespace WinTail
     {
         protected override void OnReceive(object message)
         {
-            if(message is Messages.InputError)
+            if (message is Messages.InputError)
             {
                 var msg = message as Messages.InputError;
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(msg.Reason);
             }
-            else if(message is Messages.InputSuccess)
+            else if (message is Messages.InputSuccess)
             {
                 var msg = message as Messages.InputSuccess;
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -29,7 +29,6 @@ namespace WinTail
             }
 
             Console.ResetColor();
-
         }
     }
 }
